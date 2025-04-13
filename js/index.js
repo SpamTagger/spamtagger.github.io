@@ -60,7 +60,7 @@ $(function() {
       const colors = ['5b1301', '015b40', '011c5b', '40015b'];
       Object.keys(languages).sort((a, b) => languages[b] - languages[a]).slice(0, 4).forEach((language, index) => {
         $('.languages').append(
-          `<a class="languages_name" href="https://github.com/SpamTagger?language=${language.toLowerCase()}" target="_blank" style="background-color:#${colors[index]};">${language}</a>`
+          `<a class="languages_name" href="https://github.com/SpamTagger/repositories?language=${language.toLowerCase()}" target="_blank" style="background-color:#${colors[index]};">${language}</a>`
         );
       });
     }
