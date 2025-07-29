@@ -66,3 +66,47 @@ $(function() {
     }
   });
 });
+
+function getAnchor() {
+  var currentUrl = document.URL,
+  urlParts = currentUrl.split('#');
+  return (urlParts.length > 1) ? urlParts[1] : null;
+}
+
+function toggleMenu() {
+  var m = document.getElementById("header_menu");
+  var s = document.getElementById("menu_spacer");
+  var b = document.getElementById("menu_button");
+  var window_top = window.scrollY;
+  if (m.style.display == "" || m.style.display == 'none') {
+    m.style.display = 'block';
+    if (window_top > 90) {
+      s.style.display = 'block';
+    }
+    b.style.transform = 'rotate(45deg)';
+  } else {
+    m.style.display = 'none';
+    if (window_top > 90) {
+      s.style.display = 'none';
+    }
+    b.style.transform = '';
+  }
+}
+
+function stickMenu() {
+  var m = document.getElementById("header_menu");
+  var s = document.getElementById("menu_spacer");
+  var window_top = window.scrollY;
+  if (window_top > 90) {
+    m.classList.add('menu_stick');
+    if (document.getElementById('header_menu').style.display == 'block') {
+      s.style.display = 'block';
+    }
+  } else {
+    m.classList.remove('menu_stick');
+    s.style.display = 'none';
+  }
+}
+
+window.addEventListener('scroll', stickMenu);
+stickMenu();

@@ -1,66 +1,158 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="utf-8">
-    <meta http-equiv="x-ua-compatible" content="ie=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SpamTagger - Free and Open Source Spam Filtering Tools</title>
-    <link href="images/square-initials-envelope.png" rel="icon" type="image/png">
-    <link rel="stylesheet" href="css/index.css">
+  <meta charset="utf-8">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SpamTagger - Free and Open Source Spam Filtering Tools</title>
+  <link href="images/square-initials-envelope.png" rel="icon" type="image/png">
+  <link rel="stylesheet" href="css/index.css">
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Rubik+Spray+Paint');
+  </style>
 </head>
+
 <body>
-<header class="header">
+  <header id="header" class="header">
+    <div class="header_button">
+      <button id="menu_button" class="menu" onclick="toggleMenu()">+</button>
+    </div>
     <div class="header_top">
-	<a href="https://github.com/SpamTagger">
-            <img class="header_logo" alt="SpamTagger logo" src="images/spamtagger-full.png"/></img>
-	</a>
-    </div>
+      <a href="#"
+        onclick="loadMd('https://raw.githubusercontent.com/SpamTagger/.github/refs/heads/main/profile/README.md', 'md')"
+        target="_parent">
 
-    <div class="header_main">
-        <span class="header_title">Free and Open Source Spam Filtering Tools</span>
-        <ul class="header_stats stats">
-            <li class="stats_item">
-                <span class="stats_label">
-		    <img class="icon stats_icon" src="images/star.svg">
-                    <span>Stars</span>
-                </span>
-                <span class="stats_count stats_count-stars"></span>
-            </li>
-            <li class="stats_item">
-                <span class="stats_label">
-		    <img class="icon stats_icon" src="images/repo.svg">
-                    <span>Repositories</span>
-                </span>
-                <span class="stats_count stats_count-repos"></span>
-            </li>
-            <li class="stats_item">
-                <span class="stats_label">
-		    <img class="icon stats_icon" src="images/code.svg">
-                    <span>Languages</span>
-                </span>
-                <span class="stats_count stats_count-languages"></span>
-            </li>
-        </ul>
+        <img class="header_logo" alt="SpamTagger logo" src="images/spamtagger-full.png" /></img>
+      </a>
     </div>
-</header>
+    <div id="header_menu">
+      <ul>
+        <li><a href="/#SpamTagger-Plus"
+            onclick="loadMd('https://raw.githubusercontent.com/SpamTagger/SpamTagger/refs/heads/main/README.md', 'md')">SpamTagger
+          </a></li>
+        <li><a href="/#SpamTagger-Plus"
+            onclick="loadMd('https://raw.githubusercontent.com/SpamTagger/SpamTagger-Plus/refs/heads/master/README.md', 'md')">SpamTagger
+            Plus</a></li>
+        <li><a href="/#GitHub">GitHub</a></li>
+        <li><a href="https://github.com/orgs/SpamTagger/discussions">Contact</a></li>
+      </ul>
+    </div>
+    <div id="menu_spacer">
+    </div>
+  </header>
+  <preloader>
+    <div id="md" class="md">
+      <style>
+        div#md {
+          min-height: 100vh;
+          overflow-y: hidden;
+        }
 
-<div class="content">
+        @keyframes scrollEnvelope {
+          0% {
+            transform: translateX(25%);
+            opacity: 0;
+          }
+
+          15% {
+            transform: translateX(25%);
+            opacity: 1;
+          }
+
+          85% {
+            transform: translateX(75%);
+            opacity: 1;
+          }
+
+          100% {
+            transform: translateX(75%);
+            opacity: 0;
+          }
+        }
+
+        #loading {
+          margin: 20px 0px;
+          animation: scrollEnvelope 2s infinite;
+        }
+
+        #loading.scroll {
+          margin: auto -100px auto auto;
+        }
+      </style>
+      <h1 class="markdown-h1"><span style="opacity: 0">...</span></h1>
+      <h2 class="markdown-h2"><span style="opacity: 0">...</span></h2>
+      <p id="loading" style="line-height: 30vh; font-size: 40px; opacity: 0; margin-left: -100px;">📨</p>
+    </div>
+  </preloader>
+  <header class="header">
+    <div id="GitHub" class="header_body">
+      <span class="header_title">SpamTagger on GitHub</span>
+    </div>
+  </header>
+  <div class="content">
+    <span class="github_text">
+      <p>All SpamTagger projects are fully open source and hosted on <a
+          href="https://github.com/orgs/SpamTagger/repositories" target="_blank">GitHub</a>.</p>
+    </span>
+    <ul class="header_stats stats">
+      <li class="stats_item">
+        <span class="stats_label">
+          <img class="icon stats_icon" src="images/star.svg">
+          <span>Stars</span>
+        </span>
+        <span class="stats_count stats_count-stars"></span>
+      </li>
+      <li class="stats_item">
+        <span class="stats_label">
+          <img class="icon stats_icon" src="images/repo.svg">
+          <span>Repositories</span>
+        </span>
+        <span class="stats_count stats_count-repos"></span>
+      </li>
+      <li class="stats_item">
+        <span class="stats_label">
+          <img class="icon stats_icon" src="images/code.svg">
+          <span>Languages</span>
+        </span>
+        <span class="stats_count stats_count-languages"></span>
+      </li>
+    </ul>
+
     <div class="content_section">
-        <h2 class="heading">Repositories</h2>
-        <div class="languages">
-            <h3 class="languages_title">Top languages</h3>
-        </div>
+      <h2 class="heading">Repositories</h2>
+      <div class="languages">
+        <h3 class="languages_title">Top languages</h3>
+      </div>
     </div>
 
     <div class="content_section content_section--repos">
-        <ol class="repos"></ol>
+      <ol class="repos"></ol>
     </div>
-</div>
-<footer class="footer">
-    <div class="footer-copyright">SpamTagger is an open source, community software.<br>© 2025 SpamTagger Contributors</div>
-</footer>
-</div>
-<script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
-<script src="js/index.js"></script>
+  </div>
+  <footer class="footer">
+    <div class="footer-copyright">SpamTagger is an open source, community software.<br>© 2025 SpamTagger Contributors
+    </div>
+  </footer>
+  </div>
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+  <script src="js/index.js"></script>
+  <script src="js/md2html.js"></script>
+  <link rel="stylesheet" href="css/md.css">
+  <script>
+    var anchor = getAnchor();
+    if (anchor === null) {
+      loadMd("https://raw.githubusercontent.com/SpamTagger/.github/refs/heads/main/profile/README.md", "md");
+    } else if (anchor == 'SpamTagger-Plus') {
+      loadMd("https://raw.githubusercontent.com/SpamTagger/SpamTagger-Plus/refs/heads/master/README.md", "md");
+    } else if (anchor == 'SpamTagger') {
+      loadMd("https://raw.githubusercontent.com/SpamTagger/SpamTagger/refs/heads/main/README.md", "md");
+    } else {
+      i = document.getElementById('md');
+      i.innerHTML = '<div class="markdown-container markdown-container-warning"><p>Page "' + anchor + '" does not exist, redirecting...</p>';
+      window.location = "/";
+    }
+  </script>
 </body>
+
 </html>
