@@ -83,13 +83,13 @@ function toggleMenu() {
     if (window_top > 90) {
       s.style.display = 'block';
     }
-    b.style.transform = 'rotate(45deg)';
+    b.classList.add('button_rotate');
   } else {
     m.style.display = 'none';
     if (window_top > 90) {
       s.style.display = 'none';
     }
-    b.style.transform = '';
+    b.classList.remove('button_rotate');
   }
 }
 

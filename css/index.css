@@ -5,6 +5,7 @@ body {
   height: 100%;
   min-width: 480px;
   font-size: 14px;
+  font-family: 'AnonymicePro', 'Anonymous Pro', sans-serif;
   line-height: 1.66;
   word-wrap: break-word;
 }
@@ -56,6 +57,7 @@ a {
 
 .header_button {
   position: fixed;
+  height: 90px;
   top: -10px;
   right: 20px;
   z-index: 2;
@@ -63,15 +65,20 @@ a {
 
 .header button {
   background: none;
-  color: #53BCE6;
+  color: #15CFFD;
   font-size: 80px;
   font-family: 'Rubik Spray Paint', 'Comic Sans', sans-serif;
   text-shadow:
     -1px -2px 0px #014A5D,
-    5px -2px 0px #014A5D,
-    -1px 2px 0px #014A5D,
-    5px 2px 0px #014A5D;
+    3px -2px 0px #014A5D,
+    -1px 3px 0px #014A5D,
+    3px 3px 0px #014A5D;
   border: none;
+}
+
+.button_rotate {
+  transform: rotate(45deg);
+  margin-left: 9px;
 }
 
 .menu {
@@ -103,6 +110,7 @@ a {
 
 #header_menu li {
   display: inline-block;
+  font-weight: bold;
   margin: 10px auto;
   padding: 0px 10px;
 }
