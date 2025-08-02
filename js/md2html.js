@@ -200,8 +200,9 @@ function tables (input, state) {
   return;
 }
 
-async function loadMd(source, destination) {
+async function loadMd(org, repo, branch, path, destination) {
   i = document.getElementById(destination);
+  source = "https://raw.githubusercontent.com/"+org+"/"+repo+"/refs/heads/"+branch+"/"+path;
   await loadFile(source, function(md, destination) {
     if (md) {
       lines = md.split("\n");
@@ -383,6 +384,13 @@ async function loadMd(source, destination) {
       i.innerHTML = html;
     } else {
       i.innerHTML = "Failed";
+      return;
+    }
+    document.getElementById("header").scrollIntoView();
+    if (repo != '.github') {
+      window.location.href = "#"+repo;
+    } else if (location.href.match(/#/,)) {
+      window.location.href = "";
     }
   });
 }

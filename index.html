@@ -19,20 +19,19 @@
       <button id="menu_button" class="menu" onclick="toggleMenu()">+</button>
     </div>
     <div class="header_top">
-      <a onclick="loadMd('https://raw.githubusercontent.com/SpamTagger/.github/refs/heads/main/profile/README.md', 'md')"
-        target="_parent">
+      <a onclick="loadMd('SpamTagger', '.github', 'main', 'profile/README.md', 'md')">
         <img class="header_logo" alt="SpamTagger logo" src="images/spamtagger-full.png" /></img>
       </a>
     </div>
     <div id="header_menu">
       <ul>
-        <li><a
-            onclick="loadMd('https://raw.githubusercontent.com/SpamTagger/SpamTagger/refs/heads/main/README.md', 'md')">SpamTagger
+        <li><a onclick="loadMd('SpamTagger', 'SpamTagger', 'main', 'README.md', 'md')">SpamTagger
           </a></li>
-        <li><a
-            onclick="loadMd('https://raw.githubusercontent.com/SpamTagger/SpamTagger-Plus/refs/heads/master/README.md', 'md')">SpamTagger
+        <li><a onclick="loadMd('SpamTagger', 'SpamTagger-Plus', 'main', 'README.md', 'md')">SpamTagger
             Plus</a></li>
-        <li><a href="#GitHub">GitHub</a></li>
+        <li><a onclick="loadMd('SpamTagger', 'SpamTagger-Bootc', 'main', 'README.md', 'md')">SpamTagger
+            Bootc</a></li>
+        <li><a href="#GitHub" onclick="toggleMenu()">GitHub</a></li>
         <li><a href="https://github.com/orgs/SpamTagger/discussions">Contact</a></li>
       </ul>
     </div>
@@ -140,10 +139,13 @@
   <script>
     var anchor = getAnchor();
     if (anchor === null) {
-      loadMd("https://raw.githubusercontent.com/SpamTagger/.github/refs/heads/main/profile/README.md", "md");
+      loadMd("SpamTagger", ".github", "main", "profile/README.md", "md");
     } else if (anchor == 'SpamTagger-Plus') {
-      loadMd("https://raw.githubusercontent.com/SpamTagger/SpamTagger-Plus/refs/heads/master/README.md", "md");
+      loadMd("SpamTagger", "SpamTagger-Plus", "main", "README.md", "md");
+    } else if (anchor == 'SpamTagger-Bootc') {
+      loadMd("SpamTagger", "SpamTagger-Bootc", "main", "README.md", "md");
     } else if (anchor == 'SpamTagger') {
+      loadMd("SpamTagger", "SpamTagger", "main", "README.md", "md");
       loadMd("https://raw.githubusercontent.com/SpamTagger/SpamTagger/refs/heads/main/README.md", "md");
     } else {
       i = document.getElementById('md');
