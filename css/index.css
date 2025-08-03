@@ -17,6 +17,18 @@ a {
   text-decoration: none;
 }
 
+h1,
+h2,
+h3,
+h4 {
+  margin: 20px 0px;
+}
+
+ul {
+  margin: 0px 10px;
+  padding: 20px 0px 20px 20px;
+}
+
 .icon {
   display: inline-block;
   width: 16px;
@@ -106,12 +118,13 @@ a {
   width: 100%;
   display: inline-block;
   padding: 0px;
+  margin: 24px 0px;
 }
 
 #header_menu li {
   display: inline-block;
   font-weight: bold;
-  margin: 10px auto;
+  margin: 0px auto;
   padding: 0px 10px;
 }
 
