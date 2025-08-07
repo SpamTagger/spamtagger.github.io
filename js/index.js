@@ -5,7 +5,7 @@ $(function() {
 
   $.ajax(`${apiUrl}/repos?per_page=1000`, {
     success: (data) => {
-      data.filter(repo => !repo.archived).sort((a, b) =>  b.stargazers_count - a.stargazers_count).forEach((repo) => {
+      data.filter(repo => !repo.archived).sort((b, a) => { return ('' + a.pushed_at).localeCompare(b.pushed_at) } ).forEach((repo) => {
         totalStars += repo.stargazers_count;
 
         if (repo.language) {
