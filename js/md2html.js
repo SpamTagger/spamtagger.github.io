@@ -74,7 +74,7 @@ function textFormatting(input) {
     input = input.replace(/!\[([^\]]*)\]\(([^\)]*)\)/g, '<div class="markdown-img-container"><img class="markdown-img" src="$2" alt="$1"/></div>');
   }
   if (input.match(/\[([^\]]*)\]\(([^\)]*)\)/)) {
-    input = input.replace(/\[([^\]]*)\]\(([^\)]*)\)/g, '<a class="markdown-a" href="$2">$1</a>');
+    input = input.replace(/\[([^\]]*)\]\(([^\)]*)\)/g, '<a class="markdown-a" target="_parent" href="$2">$1</a>');
   }
   return input;
 }
