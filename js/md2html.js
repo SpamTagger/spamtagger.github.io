@@ -48,34 +48,16 @@ async function loadFile(source, response) {
 }
 
 function textFormatting(input) {
-  if (input.match(/\*\*.*\*\*/)) {
-    input = input.replace(/\*\*(.*)\*\*/g, '<b class="markdown-bold">$1</b>');
-  } else if (input.match(/__(.*)__/)) {
-    input = input.replace(/__(.*)__/g, '<b class="markdown-bold">$1</b>');
-  }
-  if (input.match(/\*.*\*/)) {
-    input = input.replace(/\*(.*)\*/g, '<em class="markdown-em">$1</em>');
-  } else if (input.match(/_(.*)_/)) {
-    input = input.replace(/_(.*)_/g, '<em class="markdown-em">$1</em>');
-  }
-  if (input.match(/\+\+.*\+\+/)) {
-    input = input.replace(/\+\+(.*)\+\+/g, '<ins class="markdown-ins">$1</ins>');
-  }
-  if (input.match(/\=\=.*\=\=/)) {
-    input = input.replace(/\=\=(.*)\=\=/g, '<mark class="markdown-mark">$1</mark>');
-  }
-  if (input.match(/\~\~.*\~\~/)) {
-    input = input.replace(/\~\~(.*)\~\~/g, '<s class="markdown-strike">$1</s>');
-  }
-  if (input.match(/\`([^\`]+)\`/)) {
-    input = input.replace(/\`([^\`]+)\`/g, '<span class="markdown-inline">$1</span>');
-  }
-  if (input.match(/!\[([^\]]*)\]\(([^\)]*)\)/)) {
-    input = input.replace(/!\[([^\]]*)\]\(([^\)]*)\)/g, '<div class="markdown-img-container"><img class="markdown-img" src="$2" alt="$1"/></div>');
-  }
-  if (input.match(/\[([^\]]*)\]\(([^\)]*)\)/)) {
-    input = input.replace(/\[([^\]]*)\]\(([^\)]*)\)/g, '<a class="markdown-a" target="_parent" href="$2">$1</a>');
-  }
+  input = input.replace(/\[([^\]]*)\]\(([^\)]*)\)/g, '<a class="markdown-a" target="_parent" href="$2">$1</a>');
+  input = input.replace(/(?<!<[^>]*?)(?:\`([^\`]+)\`)/g, '<span class="markdown-inline">$1</span>');
+  input = input.replace(/(?<!<[^>]*?)(?:!\[([^\]]*)\]\(([^\)]*)\))/g, '<div class="markdown-img-container"><img class="markdown-img" src="$2" alt="$1"/></div>');
+  input = input.replace(/(?<!<[^>]*?)(?:\*\*([^\*]+)\*\*)/g, '<b class="markdown-bold">$1</b>');
+  input = input.replace(/(?<!<[^>]*?)(?:__([^_]+)__)/g, '<b class="markdown-bold">$1</b>');
+  input = input.replace(/(?<!<[^>]*?)(?:\*([^\*]+)\*)/g, '<em class="markdown-em">$1</em>');
+  input = input.replace(/(?<!<[^>]*?)(?:_([^_]+)_)/g, '<em class="markdown-em">$1</em>');
+  input = input.replace(/(?<!<[^>]*?)(?:\+\+([^\+]+)\+\+)/g, '<ins class="markdown-ins">$1</ins>');
+  input = input.replace(/(?<!<[^>]*?)(?:\=\=([^\=]+)\=\=)/g, '<mark class="markdown-mark">$1</mark>');
+  input = input.replace(/(?<!<[^>]*?)(?:\~\~([^\~]+)\~\~)/g, '<s class="markdown-strike">$1</s>');
   return input;
 }
 
