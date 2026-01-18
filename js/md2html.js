@@ -311,7 +311,7 @@ async function loadMd(org, repo, branch, path, destination) {
           } else if (a.match(/^##(.*)/)) {
             a = a.replace(/^##(.*)/, '<h2 class="markdown-h2">$1</h2>');
           } else if (a.match(/^#(.*)/)) {
-            a = a.replace(/^#(.*)/, '<h1 class="markdown-h1">$1</h1>');
+            a = a.replace(/^#(.*)/, '<h1 class="markdown-h1"><a href="https://github.com/'+org+'/'+repo+'">$1</a></h1>');
           }
           html += a;
           return;
