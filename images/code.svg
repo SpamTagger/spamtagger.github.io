@@ -7,7 +7,7 @@
    viewBox="0 0 14 10"
    version="1.1"
    id="svg1"
-   inkscape:version="1.4 (e7c3feb100, 2024-10-09)"
+   inkscape:version="1.4.3 (0d15f75042, 2025-12-25)"
    sodipodi:docname="code.svg"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
@@ -24,10 +24,10 @@
      inkscape:deskcolor="#d1d1d1"
      inkscape:document-units="mm"
      inkscape:zoom="0.70110129"
-     inkscape:cx="397.23219"
+     inkscape:cx="-47.781969"
      inkscape:cy="549.84922"
      inkscape:window-width="1706"
-     inkscape:window-height="1040"
+     inkscape:window-height="1066"
      inkscape:window-x="0"
      inkscape:window-y="0"
      inkscape:window-maximized="0"
@@ -40,7 +40,7 @@
      id="layer1"
      transform="translate(0,-3)">
     <path
-       style="fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.211667;stroke-linejoin:bevel"
+       style="fill:#15cffd;fill-opacity:1;stroke:none;stroke-width:0.211667;stroke-linejoin:bevel"
        d="M 9.5,3 8,4.5 11.5,8 8,11.5 9.5,13 14,8 Z M 4.5,3 0,8 4.5,13 6,11.5 2.5,8 6,4.5 Z"
        id="path1"
        inkscape:label="path1" />

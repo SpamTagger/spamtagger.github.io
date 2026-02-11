@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   width="12.88489mm"
+   height="16mm"
+   viewBox="0 0 12.88489 16"
+   version="1.1"
+   id="svg1"
+   inkscape:version="1.4.3 (0d15f75042, 2025-12-25)"
+   sodipodi:docname="discussions.svg"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview1"
+     pagecolor="#ffffff"
+     bordercolor="#000000"
+     borderopacity="0.25"
+     inkscape:showpageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#d1d1d1"
+     inkscape:document-units="mm"
+     inkscape:zoom="5.8751546"
+     inkscape:cx="52.339048"
+     inkscape:cy="61.870712"
+     inkscape:window-width="1706"
+     inkscape:window-height="1030"
+     inkscape:window-x="0"
+     inkscape:window-y="0"
+     inkscape:window-maximized="0"
+     inkscape:current-layer="layer1" />
+  <defs
+     id="defs1" />
+  <g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1">
+    <path
+       id="path2"
+       style="fill:none;stroke:#15cffd;stroke-width:0.907095;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1;paint-order:normal"
+       d="M 8.4387273,4.4540282 V 5.434506 H 4.4461125 V 8.5107061 H 8.4387273 V 9.4349338 H 9.1469372 L 11.65321,11.48964 V 9.4349338 h 0.778132 V 4.4540282 Z" />
+    <path
+       style="fill:none;stroke:#15cffd;stroke-width:0.907095;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1;paint-order:normal"
+       d="M 0.45354751,5.4345926 H 1.231835 v 2.054681 l 2.5060888,-2.0546812 4.700861,2e-7 V 0.45354751 H 0.45354751 Z"
+       id="path3" />
+    <path
+       style="fill:none;stroke:#15cffd;stroke-width:0.907095;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1;paint-order:normal"
+       d="M 0.45354751,13.491822 H 1.231835 v 2.054681 l 2.5060888,-2.054681 h 4.700861 V 8.5107771 H 0.45354751 Z"
+       id="path4" />
+  </g>
+</svg>

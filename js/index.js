@@ -5,6 +5,11 @@ $(function() {
   let totalStars = 0;
   const languages = {};
 
+  $.ajax(`${apiUrl}`, {
+    success: (data) => {
+      $('.stats_count-followers').text(data.followers);
+    }
+  });
   $.ajax(`${apiUrl}/repos?per_page=1000`, {
     success: (data) => {
       data.filter(repo => !repo.archived).sort((b, a) => { return ('' + a.pushed_at).localeCompare(b.pushed_at) } ).forEach((repo) => {
@@ -81,7 +86,7 @@ function menuOff() {
   var b = document.getElementById("menu_button");
   var window_top = window.scrollY;
   m.style.display = 'none';
-  if (window_top > 90) {
+  if (window_top > 140) {
     s.style.display = 'none';
   }
   b.classList.remove('button_rotate');
@@ -93,7 +98,7 @@ function menuOn() {
   var b = document.getElementById("menu_button");
   var window_top = window.scrollY;
   m.style.display = 'block';
-  if (window_top > 90) {
+  if (window_top > 140) {
     s.style.display = 'block';
   }
   b.classList.add('button_rotate');
@@ -120,15 +125,21 @@ function stickMenu() {
   var m = document.getElementById("header_menu");
   var s = document.getElementById("menu_spacer");
   var t = document.getElementById("top_button");
+  var h = document.getElementById('header');
   var window_top = window.scrollY;
-  if (window_top > 90) {
+  if (window_top > 140) {
     m.classList.add('menu_stick');
+    h.style.marginBottom = '85px';
     if (document.getElementById('header_menu').style.display == 'block') {
       s.style.display = 'block';
     }
     t.style.display = 'block';
   } else {
     m.classList.remove('menu_stick');
+    h.style.marginBottom = '0px';
+    if (m.style.display == 'none') {
+      menuOn();
+    }
     s.style.display = 'none';
     t.style.display = 'none';
   }

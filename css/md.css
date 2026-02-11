@@ -1,6 +1,6 @@
-.md p {
-  margin: 0px;
-  padding: 10px 20px;
+.md p, .md ul, .md ol, .md li {
+  font-size: 20px;
+  margin: 20px 10%;
 }
 
 .md ul {
@@ -14,16 +14,26 @@
 div.md {
   padding: 0px;
   margin: 0px;
+  margin-top: 50px;
 }
 
-h1.markdown-h1,
+.header_title,
+h2.markdown-h2 {
+  margin: 0px auto;
+  padding: 20px 30px;
+  display: table;
+  border-radius: 30px;
+  background: linear-gradient(5deg, rgba(255, 255, 255, 0.3), rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.3), rgba(255, 255, 255, 0.3), rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.3));
+  background-size: 4000px;;
+  background-repeat: repeat-y;
+}
+
+.header_title,
 h2.markdown-h2,
 h3.markdown-h3,
 h4.markdown-h4,
 h5.markdown-h5,
 h6.markdown-h6 {
-  margin: 0px;
-  padding: 20px;
 }
 
 h1.markdown-h1,
@@ -33,15 +43,16 @@ h3.markdown-h3 {
 }
 
 h1.markdown-h1 {
-  background-color: #15CFFD;
+  background-image: url('/images/spray.svg');
+  background-size: 1000px;
+  background-repeat: no-repeat;
+  background-position: center;
+  padding: 200px 0px 200px 0px;
+  margin: -100px auto -100px auto;
 }
 
 h1.markdown-h1 a {
   color: #ffffff;
-}
-
-h2.markdown-h2 {
-  background-color: #014A5D;
 }
 
 h3.markdown-h3 {

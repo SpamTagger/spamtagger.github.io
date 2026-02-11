@@ -7,7 +7,7 @@
    viewBox="0 0 12 16"
    version="1.1"
    id="svg1"
-   inkscape:version="1.4 (e7c3feb100, 2024-10-09)"
+   inkscape:version="1.4.3 (0d15f75042, 2025-12-25)"
    sodipodi:docname="repo.svg"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
@@ -24,10 +24,10 @@
      inkscape:deskcolor="#d1d1d1"
      inkscape:document-units="mm"
      inkscape:zoom="0.70110129"
-     inkscape:cx="397.23219"
-     inkscape:cy="561.25984"
+     inkscape:cx="-1334.3293"
+     inkscape:cy="-238.90984"
      inkscape:window-width="1706"
-     inkscape:window-height="1040"
+     inkscape:window-height="1066"
      inkscape:window-x="0"
      inkscape:window-y="0"
      inkscape:window-maximized="0"
@@ -39,7 +39,7 @@
      inkscape:groupmode="layer"
      id="layer1">
     <path
-       style="fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.211667;stroke-linejoin:bevel"
+       style="fill:#15cffd;fill-opacity:1;stroke:none;stroke-width:0.211667;stroke-linejoin:bevel"
        d="M 4,9 H 3 V 8 H 4 Z M 4,6 H 3 V 7 H 4 Z M 4,4 H 3 V 5 H 4 Z M 4,2 H 3 v 1 h 1 z m 8,-1 v 12 c 0,0.55 -0.45,1 -1,1 H 6 v 2 L 4.5,14.5 3,16 V 14 H 1 C 0.45,14 0,13.55 0,13 V 1 C 0,0.45 0.45,0 1,0 h 10 c 0.55,0 1,0.45 1,1 z M 11,11 H 1 v 2 h 2 v -1 h 3 v 1 h 5 z M 11,1 H 2 v 9 h 9 z"
        id="path1"
        inkscape:label="path1" />
