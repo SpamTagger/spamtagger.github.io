@@ -2,7 +2,7 @@
   color: #000;
 }
 
-.md p, .md ul, .md ol, .md li, .md h3, .md h4, .md h5, .md h6 {
+.md p, .md ul, .md ol, .md li, .md h3, .md h4, .md h5, .md h6, .md table {
   font-size: 20px;
   margin: 10px 10%;
 }
@@ -154,6 +154,7 @@ div.markdown-container-warning {
 }
 
 table.markdown-table {
+  max-width: 80%;
   margin: 20px auto;
   padding: 0px;
   border: solid 1px rgba(0, 0, 0, 0.5);
@@ -175,5 +176,5 @@ th.markdown-th {
   padding: 10px;
   text-align: left;
   margin: 0px;
-  border: solid 1px #fff;
+  border: solid 1px #000;
 }
