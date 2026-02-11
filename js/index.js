@@ -86,7 +86,7 @@ function menuOff() {
   var b = document.getElementById("menu_button");
   var window_top = window.scrollY;
   m.style.display = 'none';
-  if (window_top > 140) {
+  if (window_top > 125) {
     s.style.display = 'none';
   }
   b.classList.remove('button_rotate');
@@ -98,7 +98,7 @@ function menuOn() {
   var b = document.getElementById("menu_button");
   var window_top = window.scrollY;
   m.style.display = 'block';
-  if (window_top > 140) {
+  if (window_top > 125) {
     s.style.display = 'block';
   }
   b.classList.add('button_rotate');
@@ -127,16 +127,14 @@ function stickMenu() {
   var t = document.getElementById("top_button");
   var h = document.getElementById('header');
   var window_top = window.scrollY;
-  if (window_top > 140) {
+  if (window_top > 125) {
     m.classList.add('menu_stick');
-    h.style.marginBottom = '85px';
     if (document.getElementById('header_menu').style.display == 'block') {
       s.style.display = 'block';
     }
     t.style.display = 'block';
   } else {
     m.classList.remove('menu_stick');
-    h.style.marginBottom = '0px';
     if (m.style.display == 'none') {
       menuOn();
     }

@@ -8,9 +8,9 @@ body {
   font-family: 'AnonymicePro', 'Anonymous Pro', sans-serif;
   line-height: 1.66;
   word-wrap: break-word;
-  background: linear-gradient(#15cFFD, #014A5D, #014A5D, #15cFFD);
-  background-size: auto 2000px;
-  background-repeat: repeat;
+  background: linear-gradient(3deg, rgba(21,207,253,0), rgba(21,207,253,0), rgba(21,207,253,1));
+  background-size: auto 1080px;
+  background-repeat: no-repeat;
 }
 
 p {
@@ -20,8 +20,12 @@ p {
 a {
   background-color: transparent;
   -webkit-text-decoration-skip: objects;
-  color: #53BCE6;
+  color: #15CFFD;
   text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
 }
 
 h1,
@@ -49,10 +53,10 @@ p ul {
 
 #header {
   margin-top: 50px;
+  width: 100%;
 }
 
 .header_body {
-  font-size: 2.4em;
   color: #FFF;
   background: #000;
   border-radius: 30px;
@@ -69,20 +73,18 @@ p ul {
 }
 
 .header_body h1 {
+  font-size: 3em;
   margin: 0px;
 }
 
-.header_top {
-  height: 120px;
-  display: flex;
-}
-
-.header_top a {
-  margin: auto;
+#header_menu a:hover, .body_menu a:hover {
+  color: #FFF;
+  text-decoration: none;
 }
 
 .header_logo {
-  height: 120px;
+  max-height: 120px;
+  max-width: 100%;
   position: relative;
   z-index: 4;
 }
@@ -90,16 +92,26 @@ p ul {
 .header_title {
   padding: 24px;
   font-weight: 400;
-  font-size: 2em;
   line-height: 1em;
 }
 
 .header_button {
   position: fixed;
-  height: 90px;
-  top: 10px;
+  height: 80px;
   right: 20px;
+  top: -5px;
   z-index: 4;
+}
+
+.header_top {
+  max-width: 80%;
+  margin: 0px auto;
+  position: relative;
+  text-align: center;
+}
+
+.header_button button:hover, #top_button:hover {
+  color: #FFF;
 }
 
 .header button {
@@ -129,11 +141,10 @@ p ul {
   background-color: #000;
   z-index: 3;
   top: 0px;
-  margin-bottom: 140px;
 }
 
 .menu_stick ul {
-  margin:0px;
+  margin:0px !important;
   padding: 0px;
 }
 
@@ -142,7 +153,7 @@ p ul {
   left: 10px;
   font-size: 55px;
   font-weight: bold;
-  line-height: 110px;
+  line-height: 80px;
 }
 
 #header_menu {
@@ -154,25 +165,37 @@ p ul {
 
 #header_menu, .body_menu {
   width: 100%;
-  min-height: 75px;
+  min-height: 60px;
   vertical-align: middle;
   text-align: center;
   position: relative;
-  margin-bottom: -50px;
+  margin-bottom: -100px;
+}
+
+#header_menu ul {
+  max-width: 90%;
+  margin-top: -16px;
+  padding: 10px 10px;
+}
+
+#header_menu li {
+  margin: 15px auto;
+}
+
+.body_menu ul {
+  margin: 15px auto;
+  padding: 15px;
 }
 
 #header_menu ul, .body_menu ul {
   list-style: none;
   background-color: #000;
   display: inline-block;
-  padding: 24px 24px;
-  margin-top: -6px;
 }
 
 #header_menu li, .body_menu li {
   display: inline-block;
   font-weight: bold;
-  margin: 15px auto;
   font-size: 1.5em;
   line-height: 1em;
 }
@@ -243,7 +266,7 @@ p ul {
 }
 
 .languages {
-  margin-bottom: 10px;
+  margin: 100px 15% 10px 15%;
 }
 
 .languages_title {
@@ -268,6 +291,7 @@ p ul {
   text-shadow: 0 0 1px rgba(0, 0, 0, .1);
   box-shadow: 0 1px 3px rgba(0, 0, 0, .12), 0 1px 2px rgba(0, 0, 0, .24);
   transition: all .3s cubic-bezier(.25, .8, .25, 1);
+  font-size: 1em;
 }
 
 .languages_name:active,
@@ -292,8 +316,8 @@ p ul {
   min-height: 100px;
   width: 100%;
   flex: 1 1 auto;
-  color: #014A5D;
-  background-color: #15CFFD;
+  color: #fff;
+  background-color: #323232;
   line-height: 1.4;
   box-shadow: 0 1px 3px rgba(0, 0, 0, .12), 0 1px 2px rgba(0, 0, 0, .24);
 }
@@ -325,7 +349,6 @@ p ul {
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
-  color: #323232;
 }
 
 .repo_title-icon {
@@ -334,11 +357,6 @@ p ul {
   height: 32px;
   margin: 0 0 0 8px;
   color: #323232;
-}
-
-.repo_title:hover .repo_title-text,
-.repo_title:hover .repo_title-icon {
-  color: #EA3002;
 }
 
 .repo_description {
@@ -381,8 +399,6 @@ p ul {
 
 .footer-copyright {
   margin: 24px;
-  font-size: 12px;
-  font-weight: 300;
 }
 
 /* Responsive Design */
@@ -432,12 +448,18 @@ p ul {
     flex-basis: 50%;
     max-width: 50%;
   }
+  .md p, .md ul, .md ol, .md li {
+    margin: 20px 20%;
+  }
 }
 
 @media (min-width:992px) {
   .repos_item {
     flex-basis: 33.33333333%;
     max-width: 33.33333333%;
+  }
+  .md p, .md ul, .md ol, .md li {
+    margin: 20px 30%;
   }
 }
 
@@ -450,7 +472,7 @@ p ul {
   border: solid 10px #53BCE6;
   padding: 0px 10px !important;
   border-radius: 10px;
-  color: #000;
+  color: #000 !important;
 }
 
 .blink_reload {
