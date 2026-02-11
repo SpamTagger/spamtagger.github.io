@@ -179,10 +179,16 @@ function tables (input, state) {
   return;
 }
 
-function loadMd(org, repo, branch, path, destination) {
+function loadMd(hostname, org, repo, branch, path, destination) {
   var element = document.getElementById(destination);
   element.classList.add('blink_reload');
-  source = "https://raw.githubusercontent.com/"+org+"/"+repo+"/refs/heads/"+branch+"/"+path;
+  if (hostname == 'github.com') {
+    source = "https://raw.githubusercontent.com/"+org+"/"+repo+"/refs/heads/"+branch+"/"+path;
+  } else if (hostname == 'localhost') {
+    source = path;
+  } else {
+    source = "https://"+hostname+"/"+org+"/"+repo+"/refs/heads/"+branch+"/"+path;
+  }
   loadFile(source, function(md, destination) {
     if (md) {
       lines = md.split("\n");

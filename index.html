@@ -19,7 +19,7 @@
       <button id="menu_button" class="menu button_rotate" onclick="toggleMenu()">+</button>
     </div>
     <div class="header_top">
-      <a onclick="loadMd('SpamTagger', '.github', 'main', 'profile/README.md', 'md1')">
+      <a onclick="loadMd('github.com', 'SpamTagger', '.github', 'main', 'profile/README.md', 'md1')">
         <img class="header_logo" alt="SpamTagger logo" src="https://raw.githubusercontent.com/SpamTagger/assets/refs/heads/main/spamtagger-full.svg" /></img>
       </a>
     </div>
@@ -83,13 +83,13 @@
       <h1>Projects</h1>
     </div>
     <ul>
-      <li><a onclick="loadMd('SpamTagger', 'SpamTagger', 'main', 'README.md', 'md2');switchUnderline('projectSpamTagger')" id="projectSpamTagger">SpamTagger
+      <li><a onclick="loadMd('github.com', 'SpamTagger', 'SpamTagger', 'main', 'README.md', 'md2');switchUnderline('projectSpamTagger')" id="projectSpamTagger">SpamTagger
         </a></li>
-      <li><a onclick="loadMd('SpamTagger', 'SpamTagger-Core', 'main', 'README.md', 'md2');switchUnderline('projectSpamTagger-Core')" id="projectSpamTagger-Core">SpamTagger
+      <li><a onclick="loadMd('github.com', 'SpamTagger', 'SpamTagger-Core', 'main', 'README.md', 'md2');switchUnderline('projectSpamTagger-Core')" id="projectSpamTagger-Core">SpamTagger
           Core</a></li>
-      <li><a onclick="loadMd('SpamTagger', 'SpamTagger-Bootc', 'main', 'README.md', 'md2');switchUnderline('projectSpamTagger-Bootc')" id="projectSpamTagger-Bootc">SpamTagger
+      <li><a onclick="loadMd('github.com', 'SpamTagger', 'SpamTagger-Bootc', 'main', 'README.md', 'md2');switchUnderline('projectSpamTagger-Bootc')" id="projectSpamTagger-Bootc">SpamTagger
           Bootc</a></li>
-      <li><a onclick="loadMd('SpamTagger', 'st-exim', 'main', 'README.md', 'md2');switchUnderline('projectst-exim')" id="projectst-exim">st-exim
+      <li><a onclick="loadMd('github.com', 'SpamTagger', 'st-exim', 'main', 'README.md', 'md2');switchUnderline('projectst-exim')" id="projectst-exim">st-exim
         </a></li>
       <li><a onclick="menuOff();document.getElementById('GitHub').scrollIntoView({ behavior: 'smooth' });">More</a></li>
     </ul>
@@ -159,22 +159,22 @@
   <script>
     // Always load profile page to first block
     document.addEventListener("DOMContentLoaded", () => {
-      loadMd('SpamTagger', '.github', 'main', 'profile/README.md', 'md1');
+      loadMd('github.com', 'SpamTagger', '.github', 'main', 'profile/README.md', 'md1');
       var anchor = getAnchor();
       if (anchor !== null) {
         document.getElementById("md2").scrollIntoView();
       }
       if (anchor === null || anchor == 'SpamTagger') {
-        loadMd('SpamTagger', 'SpamTagger', 'main', 'README.md', 'md2');
+        loadMd('github.com', 'SpamTagger', 'SpamTagger', 'main', 'README.md', 'md2');
         switchUnderline('projectSpamTagger');
       } else if (anchor == 'SpamTagger-Core') {
-        loadMd('SpamTagger', 'SpamTagger-Core', 'main', 'README.md', 'md2');
+        loadMd('github.com', 'SpamTagger', 'SpamTagger-Core', 'main', 'README.md', 'md2');
         switchUnderline('projectSpamTagger-Core');
       } else if (anchor == 'SpamTagger-Bootc') {
-        loadMd('SpamTagger', 'SpamTagger-Bootc', 'main', 'README.md', 'md2');
+        loadMd('github.com', 'SpamTagger', 'SpamTagger-Bootc', 'main', 'README.md', 'md2');
         switchUnderline('projectSpamTagger-Bootc');
       } else if (anchor == 'st-exim') {
-        loadMd('SpamTagger', 'st-exim', 'main', 'README.md', 'md2');
+        loadMd('github.com', 'SpamTagger', 'st-exim', 'main', 'README.md', 'md2');
         switchUnderline('projectst-exim');
       } else {
         i = document.getElementById('md2');
