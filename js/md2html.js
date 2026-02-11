@@ -28,11 +28,9 @@
 * `idOfField` is any id on your page where you'd like the formatted HTML to be rendered to.
 */
 
-async function loadFile(source, response) {
-  i = document.getElementById("md");
-  var request = new XMLHttpRequest();
+function loadFile(source, response) {
+  const request = new XMLHttpRequest();
   request.overrideMimeType('text/plain');
-  return new Promise((resolve, reject) => {
     request.onreadystatechange = () => {
       if (request.readyState === 4) {
         if (request.status === 200) {
@@ -44,7 +42,6 @@ async function loadFile(source, response) {
     }
     request.open('GET', source, true);
     request.send();
-  });
 }
 
 function textFormatting(input) {
@@ -182,10 +179,11 @@ function tables (input, state) {
   return;
 }
 
-async function loadMd(org, repo, branch, path, destination) {
-  i = document.getElementById(destination);
+function loadMd(org, repo, branch, path, destination) {
+  var element = document.getElementById(destination);
+  element.classList.add('blink_reload');
   source = "https://raw.githubusercontent.com/"+org+"/"+repo+"/refs/heads/"+branch+"/"+path;
-  await loadFile(source, function(md, destination) {
+  loadFile(source, function(md, destination) {
     if (md) {
       lines = md.split("\n");
       html = '';
@@ -363,16 +361,15 @@ async function loadMd(org, repo, branch, path, destination) {
         regex = new RegExp("([^a-z])"+key+"([^a-z])", "g");
         html = html.replaceAll(regex, '$1<abbr title="'+abbreviations[key]+'">'+key+'</abbr>$2');
       })
-      i.innerHTML = html;
+      element.innerHTML = html;
     } else {
-      i.innerHTML = "Failed";
-      return;
+      element.innerHTML = "Failed";
     }
-    document.getElementById("header").scrollIntoView();
-    if (repo != '.github') {
-      window.location.href = "#"+repo;
-    } else if (location.href.match(/#/,)) {
-      window.location.href = "";
-    }
+    //if (repo != '.github') {
+      //window.location.href = "#"+repo;
+    //} else if (location.href.match(/#/,)) {
+      //window.location.href = "";
+    //}
+    element.classList.remove('blink_reload');
   });
 }

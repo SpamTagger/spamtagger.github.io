@@ -1,3 +1,5 @@
+window.underlined='';
+
 $(function() {
   const apiUrl = 'https://api.github.com/orgs/SpamTagger';
   let totalStars = 0;
@@ -73,38 +75,62 @@ function getAnchor() {
   return (urlParts.length > 1) ? urlParts[1] : null;
 }
 
-function toggleMenu() {
+function menuOff() {
   var m = document.getElementById("header_menu");
   var s = document.getElementById("menu_spacer");
   var b = document.getElementById("menu_button");
   var window_top = window.scrollY;
-  if (m.style.display == "" || m.style.display == 'none') {
-    m.style.display = 'block';
-    if (window_top > 90) {
-      s.style.display = 'block';
-    }
-    b.classList.add('button_rotate');
-  } else {
-    m.style.display = 'none';
-    if (window_top > 90) {
-      s.style.display = 'none';
-    }
-    b.classList.remove('button_rotate');
+  m.style.display = 'none';
+  if (window_top > 90) {
+    s.style.display = 'none';
   }
+  b.classList.remove('button_rotate');
+}
+
+function menuOn() {
+  var m = document.getElementById("header_menu");
+  var s = document.getElementById("menu_spacer");
+  var b = document.getElementById("menu_button");
+  var window_top = window.scrollY;
+  m.style.display = 'block';
+  if (window_top > 90) {
+    s.style.display = 'block';
+  }
+  b.classList.add('button_rotate');
+}
+
+function toggleMenu() {
+  var m = document.getElementById("header_menu");
+  if (m.style.display == "" || m.style.display == 'block') {
+    menuOff();
+  } else {
+    menuOn();
+  }
+}
+
+function switchUnderline(project) {
+  if (window.underlined != '' && window.underlined != null) {
+    document.getElementById(window.underlined).classList.remove('active-project');
+  }
+  document.getElementById(project).classList.add('active-project');
+  window.underlined = project;
 }
 
 function stickMenu() {
   var m = document.getElementById("header_menu");
   var s = document.getElementById("menu_spacer");
+  var t = document.getElementById("top_button");
   var window_top = window.scrollY;
   if (window_top > 90) {
     m.classList.add('menu_stick');
     if (document.getElementById('header_menu').style.display == 'block') {
       s.style.display = 'block';
     }
+    t.style.display = 'block';
   } else {
     m.classList.remove('menu_stick');
     s.style.display = 'none';
+    t.style.display = 'none';
   }
 }
 
