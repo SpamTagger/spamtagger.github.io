@@ -28,6 +28,9 @@
 * `idOfField` is any id on your page where you'd like the formatted HTML to be rendered to.
 */
 
+var html = '';
+var state = {};
+
 function loadFile(source, response) {
   const request = new XMLHttpRequest();
   request.overrideMimeType('text/plain');
@@ -45,9 +48,11 @@ function loadFile(source, response) {
 }
 
 function textFormatting(input) {
+  input = input.replace(/(?<!<[^>]*?)(?:!\[([^\]]*)\]\(([^ \)]*)(?: *"(?:([^<]*)(.*))")\))/g, '<div class="markdown-img-container"><img class="markdown-img" src="$2" alt="$1" title="$3"/><div class="markdown-img-text-container"><h1 class="markdown-img-heading">$1</h1><p class="markdown-img-text">$3$4</p></div></div>');
+  input = input.replace(/(?<!<[^>]*?)(?:!\[([^\]]*)\]\(([^ \)]*)\))/g, '<div class="markdown-img-container"><img class="markdown-img" src="$2" alt="$1" title="$1"/></div>');
+  input = input.replace(/(?<!<[^>]*?)(?:!\[([^\]]*)\]\(([^\)]*)\))/g, '<div class="markdown-img-container"><img class="markdown-img-notext" src="$2" alt="$1"/></div>');
   input = input.replace(/\[([^\]]*)\]\(([^\)]*)\)/g, '<a class="markdown-a" target="_parent" href="$2">$1</a>');
   input = input.replace(/(?<!<[^>]*?)(?:\`([^\`]+)\`)/g, '<span class="markdown-inline">$1</span>');
-  input = input.replace(/(?<!<[^>]*?)(?:!\[([^\]]*)\]\(([^\)]*)\))/g, '<div class="markdown-img-container"><img class="markdown-img" src="$2" alt="$1"/></div>');
   input = input.replace(/(?<!<[^>]*?)(?:\*\*([^\*]+)\*\*)/g, '<b class="markdown-bold">$1</b>');
   input = input.replace(/(?<!<[^>]*?)(?:__([^_]+)__)/g, '<b class="markdown-bold">$1</b>');
   input = input.replace(/(?<!<[^>]*?)(?:\*([^\*]+)\*)/g, '<em class="markdown-em">$1</em>');
@@ -66,13 +71,13 @@ function quotes(input, state) {
   if (newDepth > state.quoteDepth) {
     if (input.match(/^>/)) {
       for (let i = 0; i+state.quoteDepth < newDepth; i++) {
-        danglingNewline = 0;
+        state.danglingNewline = 0;
         html += '<blockquote class="markdown-quote'+newDepth+'">';
       }
     }
   } else {
     for (let i = 0; state.quoteDepth-i > newDepth; i++) {
-      danglingNewline = 0;
+      state.danglingNewline = 0;
       html += '</blockquote>';
     }
   }
@@ -86,9 +91,9 @@ function lists(input, state, ordered) {
   }
   if (newDepth > state.listTypes.length) {
     for (let i = state.listTypes.length; i < newDepth; i++) {
-      danglingNewline = 0;
+      state.danglingNewline = 0;
       if (ordered) {
-        start = input.match(/^\s*(\d+)\./)[1];
+        var start = input.match(/^\s*(\d+)\./)[1];
         html += '<ol '+(start === null ? '' : 'start="'+start+'"')+' class="markdown-ol markdown-ol-'+i+'">';
         state.listTypes.push(1);
       } else {
@@ -103,7 +108,7 @@ function lists(input, state, ordered) {
 }
 
 function collapseLists(state, newDepth) {
-  danglingNewline = 0;
+  state.danglingNewline = 0;
   while (state.listTypes.length > newDepth) {
     if (state.listTypes[state.listTypes.length-1]){
       html += '</ol>';
@@ -139,7 +144,7 @@ function tables (input, state) {
     html += '<tr class="markdown-tr markdown-tr-heading">';
     state.tableHeadings = input;
   } else if (input.match(/^\|\s*:?\-+:?\s*\|/)) {
-    matches = input.match(/\|([^\|]+)/g);
+    var matches = input.match(/\|([^\|]+)/g);
     if (matches === null) {
       return;
     }
@@ -154,7 +159,7 @@ function tables (input, state) {
       }
     });
     matches = state.tableHeadings.match(/\|([^\|]+)/g);
-    column = 0;
+    var column = 0;
     matches.forEach( b => {
       b = b.replace(/^\|\s*(.*[^\s])\s*/, '$1');
       html += '<th class="markdown-th"'+(state.tableJustification[column] == 'left' ? '' : ' style="text-align: '+state.tableJustification[column]+';"')+'>'+b+'</th>';
@@ -162,14 +167,14 @@ function tables (input, state) {
     delete(state.tableHeadings);
   } else {
     html += '</tr><tr class="markdown-tr">';
-    matches = input.match(/\|([^\|]+)/g);
+    var matches = input.match(/\|([^\|]+)/g);
     if (! state.tableJustification.length) {
       /*matches.foreach( b => {
         state.tableJustification.push('left');
       });
       */
     }
-    column = 0;
+    var column = 0;
     matches.forEach( b => {
       b = b.replace(/^\|\s*(.*[^\s])\s*/, '$1');
       html += '<td class="markdown-td"'+(state.tableJustification[column] == 'left' ? '' : ' style="text-align: '+state.tableJustification[column]+';"')+'>'+b+'</td>';
@@ -179,8 +184,9 @@ function tables (input, state) {
   return;
 }
 
-function loadMd(hostname, org, repo, branch, path, destination) {
+export function loadMd(hostname, org, repo, branch, path, destination) {
   var element = document.getElementById(destination);
+  var source = '';
   element.classList.add('blink_reload');
   if (hostname == 'github.com') {
     source = "https://raw.githubusercontent.com/"+org+"/"+repo+"/refs/heads/"+branch+"/"+path;
@@ -191,7 +197,7 @@ function loadMd(hostname, org, repo, branch, path, destination) {
   }
   loadFile(source, function(md, destination) {
     if (md) {
-      lines = md.split("\n");
+      var lines = md.split("\n");
       html = '';
       var abbreviations = {};
       state = {
@@ -270,7 +276,7 @@ function loadMd(hostname, org, repo, branch, path, destination) {
           html += '<hr class="markdown-hr"/>';
           return;
         } else if (a.match(/^\*\[[^\]]+\]: /)) {
-          matches = a.match(/^\*\[([^\]]+)\]: (.*)/);
+          var matches = a.match(/^\*\[([^\]]+)\]: (.*)/);
           abbreviations[matches[1]] = matches[2];
           return;
         }

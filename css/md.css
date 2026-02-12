@@ -1,10 +1,7 @@
-.md {
-  color: #000;
-}
-
 .md p, .md ul, .md ol, .md li, .md h3, .md h4, .md h5, .md h6, .md table {
-  font-size: 20px;
+  font-size: 1em;
   margin: 10px 10%;
+  padding: 10px 0px;
 }
 
 .md h3, .md h4, .md h5, .md h6 {
@@ -21,9 +18,16 @@
 }
 
 div.md {
+  color: #000;
   padding: 0px;
   margin: 0px;
-  margin-top: 50px;
+  margin-top: 100px;
+}
+
+#md2, #github_menu {
+  background: rgba(255, 192, 192, 0.5);
+  /* background: rgba(234, 48, 2, 0.3);
+  rgba(21,207,253,1)); */
 }
 
 .header_title,
@@ -57,7 +61,7 @@ h1.markdown-h1 {
   background-position: center;
   padding: 300px 5% 300px 5%;
   margin: -200px auto -200px auto;
-  font-size: 2.2em;
+  font-size: 1.4em;
 }
 
 h1.markdown-h1 a {
@@ -133,13 +137,56 @@ a span.markdown-inline {
 
 div.markdown-img-container {
   text-align: center;
-  width: 100%;
+  max-width: 100%;
+  margin: 0px 10px;
 }
 
 img.markdown-img {
-  position: relative;
+  display: inline-block;
   padding: 20px auto;
-  max-width: 50%;
+  max-width: 44%;
+  text-align: right;
+  vertical-align: middle;
+  margin: 0px 2%;
+}
+
+div.markdown-img-text-container {
+  display: inline-block;
+  width: 44%;
+  vertical-align: middle;
+  text-align: left;
+  margin: 0px 2%;
+}
+
+div.markdown-img-text-container h1 {
+  font-size: 1.4em;
+}
+
+div.markdown-img-text-container h1, div.markdown-img-text-container p, div.markdown-img-text-container ul, div.markdown-img-text-container li {
+  margin: 0px;
+  padding: 5px 0px;
+  line-height: 1.2em;
+  font-weight: bold;
+}
+
+div.markdown-img-text-container li {
+  list-style: none;
+}
+
+div.markdown-img-text-container li::before {
+  content: '📨';
+  padding: 0 10px 0 0;
+}
+
+div.markdown-img-text-container button {
+  background: #15CFFD;
+  text-align: center;
+  color: #FFF;
+  border: none;
+  padding: 10px;
+  margin: 10px auto;
+  border-radius: 25px;
+  font-weight: bold;
 }
 
 div.markdown-container {
@@ -178,3 +225,16 @@ th.markdown-th {
   margin: 0px;
   border: solid 1px #000;
 }
+
+@media (min-width:768px) {
+  div.markdown-img-container {
+    margin: 0px 10px;
+  }
+}
+
+@media (min-width:992px) {
+  div.markdown-img-container {
+    margin: 0px 5%;
+  }
+}
+

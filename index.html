@@ -19,22 +19,22 @@
       <button id="menu_button" class="menu button_rotate" onclick="toggleMenu()">+</button>
     </div>
     <div class="header_top">
-      <a onclick="loadMd('github.com', 'SpamTagger', '.github', 'main', 'profile/README.md', 'md1')">
+      
+      <a href="/">
         <img class="header_logo" alt="SpamTagger logo" src="https://raw.githubusercontent.com/SpamTagger/assets/refs/heads/main/spamtagger-full.svg" /></img>
       </a>
     </div>
     <div id="header_menu">
-      <button id="top_button" onclick="document.getElementById('header').scrollIntoView({ behavior: 'smooth' });">⭱</button>
+      <button id="top_button" onclick="document.getElementById('header').scrollIntoView({ behavior: 'smooth' });menuOn();">⭱</button>
       <ul>
-        <li><a onclick="menuOff();document.getElementById('Projects').scrollIntoView({ behavior: 'smooth' });">Projects</a></li>
-        <li><a onclick="menuOff();document.getElementById('GitHub').scrollIntoView({ behavior: 'smooth' });">GitHub</a></li>
+        <li><a onclick="document.getElementById('Projects').scrollIntoView({ behavior: 'smooth' });menuOff();">Projects</a></li>
+        <li><a onclick="document.getElementById('GitHub').scrollIntoView({ behavior: 'smooth' });menuOff();">GitHub</a></li>
         <li><a href="https://github.com/orgs/SpamTagger/discussions" target="_parent">Contact</a></li>
       </ul>
     </div>
-    <div id="menu_spacer">
-    </div>
   </header>
   <preloader>
+    <script type="module" src="js/main.js"></script>
     <style>
       div.md {
         min-height: 100vh;
@@ -83,13 +83,13 @@
       <h1>Projects</h1>
     </div>
     <ul>
-      <li><a onclick="loadMd('github.com', 'SpamTagger', 'SpamTagger', 'main', 'README.md', 'md2');switchUnderline('projectSpamTagger')" id="projectSpamTagger">SpamTagger
+      <li><a href="#SpamTagger" id="projectSpamTagger">SpamTagger
         </a></li>
-      <li><a onclick="loadMd('github.com', 'SpamTagger', 'SpamTagger-Core', 'main', 'README.md', 'md2');switchUnderline('projectSpamTagger-Core')" id="projectSpamTagger-Core">SpamTagger
+      <li><a href="#SpamTagger-Core" id="projectSpamTagger-Core">SpamTagger
           Core</a></li>
-      <li><a onclick="loadMd('github.com', 'SpamTagger', 'SpamTagger-Bootc', 'main', 'README.md', 'md2');switchUnderline('projectSpamTagger-Bootc')" id="projectSpamTagger-Bootc">SpamTagger
+      <li><a href="#SpamTagger-Bootc" id="projectSpamTagger-Bootc">SpamTagger
           Bootc</a></li>
-      <li><a onclick="loadMd('github.com', 'SpamTagger', 'st-exim', 'main', 'README.md', 'md2');switchUnderline('projectst-exim')" id="projectst-exim">st-exim
+      <li><a href="#st-exim" id="projectst-exim">st-exim
         </a></li>
       <li><a onclick="menuOff();document.getElementById('GitHub').scrollIntoView({ behavior: 'smooth' });">More</a></li>
     </ul>
@@ -101,7 +101,7 @@
   </div>
   <div id="github_menu" class="body_menu">
     <div id="GitHub" class="header_body">
-      <h1>GitHub</h1>
+      <a href="https://github.com/SpamTagger"><h1>GitHub</h1></a>
     </div>
     <ul>
       <li>
@@ -154,35 +154,8 @@
   </div>
   <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
   <script src="js/index.js"></script>
-  <script src="js/md2html.js"></script>
+  <script src="js/github.js"></script>
   <link rel="stylesheet" href="css/md.css">
-  <script>
-    // Always load profile page to first block
-    document.addEventListener("DOMContentLoaded", () => {
-      loadMd('github.com', 'SpamTagger', '.github', 'main', 'profile/README.md', 'md1');
-      var anchor = getAnchor();
-      if (anchor !== null) {
-        document.getElementById("md2").scrollIntoView();
-      }
-      if (anchor === null || anchor == 'SpamTagger') {
-        loadMd('github.com', 'SpamTagger', 'SpamTagger', 'main', 'README.md', 'md2');
-        switchUnderline('projectSpamTagger');
-      } else if (anchor == 'SpamTagger-Core') {
-        loadMd('github.com', 'SpamTagger', 'SpamTagger-Core', 'main', 'README.md', 'md2');
-        switchUnderline('projectSpamTagger-Core');
-      } else if (anchor == 'SpamTagger-Bootc') {
-        loadMd('github.com', 'SpamTagger', 'SpamTagger-Bootc', 'main', 'README.md', 'md2');
-        switchUnderline('projectSpamTagger-Bootc');
-      } else if (anchor == 'st-exim') {
-        loadMd('github.com', 'SpamTagger', 'st-exim', 'main', 'README.md', 'md2');
-        switchUnderline('projectst-exim');
-      } else {
-        i = document.getElementById('md2');
-        i.innerHTML = '<div class="markdown-container markdown-container-warning"><p>Page "' + anchor + '" does not exist, redirecting...</p>';
-        window.location = "/";
-      }
-    });
-  </script>
 </body>
 
 </html>
