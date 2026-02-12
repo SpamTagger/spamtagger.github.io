@@ -9,6 +9,7 @@ document.addEventListener("DOMContentLoaded", () => {
       loadMd('github.com', 'SpamTagger', '.github', 'main', 'profile/WEBSITE.md', 'md1');
       loadMd('github.com', 'SpamTagger', 'SpamTagger', 'main', 'README.md', 'md2');
       switchHighlighted('#SpamTagger');
+      break;
     case '#About':
       loadMd('github.com', 'SpamTagger', '.github', 'main', 'profile/README.md', 'md1');
       loadMd('github.com', 'SpamTagger', 'SpamTagger', 'main', 'README.md', 'md2');

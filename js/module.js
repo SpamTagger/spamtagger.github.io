@@ -15,11 +15,11 @@ export function loadHash() {
   switch(hash) {
     case '':
       loadMd('github.com', 'SpamTagger', '.github', 'main', 'profile/WEBSITE.md', 'md1');
-      document.getElementById("header").scrollIntoView();
+      document.getElementById("md1").scrollIntoView();
       break;
     case '#About':
       loadMd('github.com', 'SpamTagger', '.github', 'main', 'profile/README.md', 'md1');
-      document.getElementById("header").scrollIntoView();
+      document.getElementById("md1").scrollIntoView();
       break;
     case '#SpamTagger':
       loadMd('github.com', 'SpamTagger', 'SpamTagger', 'main', 'README.md', 'md2');
