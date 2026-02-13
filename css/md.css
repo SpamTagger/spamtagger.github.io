@@ -211,12 +211,19 @@ table.markdown-table {
 }
 
 tr.markdown-tr {
-  background-color: rgba(255, 255, 255, 0.2);
   margin: 0px 20px;
 }
 
 tr.markdown-tr-heading {
-  background-color: rgba(0, 0, 0, 0.2);
+  background-color: rgba(192, 192, 192, 0.5);
+}
+
+td.markdown-td {
+  background-color: rgba(255, 255, 255, 0.5);
+}
+
+tr.markdown-tr td:first-child {
+  background-color: rgba(192, 192, 192, 0.5);
 }
 
 td.markdown-td,
