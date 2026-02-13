@@ -148,6 +148,7 @@ img.markdown-img {
   text-align: right;
   vertical-align: middle;
   margin: 0px 2%;
+  max-height: 300px;
 }
 
 div.markdown-img-text-container {
@@ -228,13 +229,19 @@ th.markdown-th {
 
 @media (min-width:768px) {
   div.markdown-img-container {
-    margin: 0px 10px;
+    margin: 0px 5%;
+  }
+  img.markdown-img {
+    max-height: 350px;
   }
 }
 
 @media (min-width:992px) {
   div.markdown-img-container {
-    margin: 0px 5%;
+    margin: 0px 10%;
+  }
+  img.markdown-img {
+    max-height: 400px;
   }
 }
 
