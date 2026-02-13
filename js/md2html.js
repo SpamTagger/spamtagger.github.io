@@ -55,8 +55,8 @@ function textFormatting(input) {
   input = input.replace(/(?<!<[^>]*?)(?:\`([^\`]+)\`)/g, '<span class="markdown-inline">$1</span>');
   input = input.replace(/(?<!<[^>]*?)(?:\*\*([^\*]+)\*\*)/g, '<b class="markdown-bold">$1</b>');
   input = input.replace(/(?<!<[^>]*?)(?:__([^_]+)__)/g, '<b class="markdown-bold">$1</b>');
-  input = input.replace(/(?<!<[^>]*?)(?:\*([^\*]+)\*)/g, '<em class="markdown-em">$1</em>');
-  input = input.replace(/(?<!<[^>]*?)(?:_([^_]+)_)/g, '<em class="markdown-em">$1</em>');
+  input = input.replace(/(?<!<[^>]*?)(?:\b\*([^\*]+)\*\b)/g, '<em class="markdown-em">$1</em>');
+  input = input.replace(/(?<!<[^>]*?)(?:\b_([^_]+)_)\b/g, '<em class="markdown-em">$1</em>');
   input = input.replace(/(?<!<[^>]*?)(?:\+\+([^\+]+)\+\+)/g, '<ins class="markdown-ins">$1</ins>');
   input = input.replace(/(?<!<[^>]*?)(?:\=\=([^\=]+)\=\=)/g, '<mark class="markdown-mark">$1</mark>');
   input = input.replace(/(?<!<[^>]*?)(?:\~\~([^\~]+)\~\~)/g, '<s class="markdown-strike">$1</s>');
