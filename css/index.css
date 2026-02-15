@@ -271,150 +271,8 @@ p ul {
   color: #15CFFD;
 }
 
-.heading,
-.languages {
+.heading {
   text-align: center;
-}
-
-.languages {
-  margin: 115px 15% 10px 15%;
-}
-
-.languages a, .card a {
-  text-decoration: none;
-}
-
-.languages_title {
-  margin: 0;
-  font-weight: 400;
-}
-
-.languages_name,
-.languages_title {
-  text-transform: uppercase;
-}
-
-.languages_name {
-  display: inline-block;
-  white-space: nowrap;
-  margin: 8px 4px;
-  padding: 4px 12px;
-  border-radius: 7px;
-  color: #FFF;
-  font-weight: bold;
-  text-shadow: 0 0 1px rgba(0, 0, 0, .1);
-  box-shadow: 0 1px 3px rgba(0, 0, 0, .12), 0 1px 2px rgba(0, 0, 0, .24);
-  transition: all .3s cubic-bezier(.25, .8, .25, 1);
-}
-
-.languages_name:active,
-.languages_name:focus,
-.languages_name:hover,
-.card:hover {
-  box-shadow: 0 15px 25px rgba(0, 0, 0, .40), 0 10px 10px rgba(0, 0, 0, .40);
-}
-
-.repos {
-  list-style: none;
-  padding: 0px;
-}
-
-.repos_item {
-  margin: 0px 0px 24px 0px;
-}
-
-.card {
-  display: flex;
-  flex-direction: column;
-  min-height: 100px;
-  width: 100%;
-  flex: 1 1 auto;
-  color: #fff;
-  background-color: #323232;
-  line-height: 1.4;
-  box-shadow: 0 1px 3px rgba(0, 0, 0, .12), 0 1px 2px rgba(0, 0, 0, .24);
-}
-
-.card a {
-  color: #15CFFD;
-}
-
-.card_content {
-  flex-grow: 1;
-  padding: 8px 16px 12px;
-}
-
-.card_footer {
-  padding: 12px 16px;
-  border-top: 1px solid #014a5d;
-}
-
-.repo_title {
-  display: flex;
-  align-items: center;
-  margin: 0;
-  padding: 8px 16px 0;
-  line-height: 24px;
-  font-size: 1.5em;
-  font-weight: 400;
-}
-
-.repo_title-text {
-  flex-grow: 1;
-  display: block;
-  max-width: 100%;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  white-space: nowrap;
-}
-
-.repo_title-icon {
-  flex: none;
-  width: 32px;
-  height: 32px;
-  margin: 0 0 0 8px;
-  color: #323232;
-}
-
-.repo_description {
-  font-size: 1.2em;
-  line-height: 1.6;
-  max-height: 72px;
-  overflow: hidden;
-  display: -webkit-box;
-  -webkit-line-clamp: 3;
-  -webkit-box-orient: vertical;
-  line-clamp: 3;
-  text-overflow: ellipsis;
-}
-
-.repo_summary {
-  white-space: nowrap;
-}
-
-.repo_summary-item {
-  display: inline-block;
-  white-space: nowrap;
-  vertical-align: top;
-  color: currentColor;
-}
-
-.repo_summary-item:not(:first-child) {
-  margin-left: 16px;
-}
-
-.footer {
-  text-align: center;
-  color: #FFF;
-  background-color: #014A5D;
-}
-
-.footer {
-  width: 100%;
-}
-
-.footer-copyright {
-  margin: 24px;
 }
 
 /* Responsive Design */
@@ -432,40 +290,11 @@ p ul {
     max-width: 1140px;
     margin: 0 auto;
   }
-
-  .stats {
-    max-width: 400px;
-    border-radius: 7px;
-    margin-bottom: 24px;
-  }
-
-  .repos {
-    display: flex;
-    flex-flow: row wrap;
-    margin: 0px;
-    padding: 5px;
-  }
-
-  .repos_item {
-    display: flex;
-    flex: 1 1 100%;
-    box-sizing: border-box;
-    max-width: 100%;
-    padding: 0 12px 0px 12px;
-  }
-
-  .card {
-    border-radius: 7px;
-  }
 }
 
 @media (min-width:768px) {
   body {
     font-size: 1.2em;
-  }
-  .repos_item {
-    flex-basis: 50%;
-    max-width: 50%;
   }
   .md p, .md ul, .md ol, .md li {
     margin: 20px 20%;
@@ -473,10 +302,6 @@ p ul {
 }
 
 @media (min-width:992px) {
-  .repos_item {
-    flex-basis: 33.33333333%;
-    max-width: 33.33333333%;
-  }
   .md p, .md ul, .md ol, .md li {
     margin: 20px 30%;
   }

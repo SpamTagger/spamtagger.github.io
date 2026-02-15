@@ -241,6 +241,9 @@ th.markdown-th {
   img.markdown-img {
     max-height: 350px;
   }
+  .md p, .md ul, .md ol, .md li {
+    margin: 20px 20%;
+  }
 }
 
 @media (min-width:992px) {
@@ -250,5 +253,7 @@ th.markdown-th {
   img.markdown-img {
     max-height: 400px;
   }
+  .md p, .md ul, .md ol, .md li {
+    margin: 20px 30%;
+  }
 }
-
