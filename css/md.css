@@ -241,8 +241,8 @@ th.markdown-th {
   img.markdown-img {
     max-height: 350px;
   }
-  .md p, .md ul, .md ol, .md li {
-    margin: 20px 20%;
+  .md p, .md ul, .md ol {
+    margin: 20px 10%;
   }
 }
 
@@ -253,7 +253,7 @@ th.markdown-th {
   img.markdown-img {
     max-height: 400px;
   }
-  .md p, .md ul, .md ol, .md li {
-    margin: 20px 30%;
+  .md p, .md ul, .md ol {
+    margin: 20px 20%;
   }
 }
