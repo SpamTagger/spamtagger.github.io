@@ -12,24 +12,24 @@ export function loadHash() {
   if (window.location.hash !== null) {
     hash = window.location.hash;
   }
-  switch(hash) {
+  switch(hash.toLowerCase()) {
     case '':
       loadMd('github.com', 'SpamTagger', '.github', 'main', 'profile/WEBSITE.md', 'md1');
       document.getElementById("md1").scrollIntoView();
       break;
-    case '#About':
+    case '#about':
       loadMd('github.com', 'SpamTagger', '.github', 'main', 'profile/README.md', 'md1');
       document.getElementById("md1").scrollIntoView();
       break;
-    case '#SpamTagger':
+    case '#spamtagger':
       loadMd('github.com', 'SpamTagger', 'SpamTagger', 'main', 'README.md', 'md2');
       md2(hash);
       break;
-    case '#SpamTagger-Core':
+    case '#spamtagger-core':
       loadMd('github.com', 'SpamTagger', 'SpamTagger-Core', 'main', 'README.md', 'md2');
       md2(hash);
       break;
-    case '#SpamTagger-Bootc':
+    case '#spamTagger-bootc':
       loadMd('github.com', 'SpamTagger', 'SpamTagger-Bootc', 'main', 'README.md', 'md2');
       md2(hash);
       break;
