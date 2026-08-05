@@ -7,25 +7,6 @@
 * The tool currently has no sanity checks for pages that aren't Markdown, pages that are formatted
 * incorrectly, pages that don't load or any other frills.
 *
-* Currently this does not support:
-*
-* - Footnotes (and footnote style images)
-* - Emoticon -> emoji conversion
-* - Typographic replacements (use unicode in the source document instead)
-* - Definitions (dt/dd) blocks
-* - Any plugins/extensions
-*
-* Could also use:
-*
-* - more robust classes, eg. for list numbers
-* - quite a bit of re-factoring for speed and sanity
-*
-* Usage: Include library in your web document then run:
-*
-* loadMd("/path/to/document.md","idOfField");
-*
-* `/path/to/document.md` can be any href for the Markdown document you would like to render.
-* `idOfField` is any id on your page where you'd like the formatted HTML to be rendered to.
 */
 
 var html = '';
