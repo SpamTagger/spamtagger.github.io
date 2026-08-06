@@ -29,7 +29,7 @@ export function loadHash() {
       loadMd('github.com', 'SpamTagger', 'SpamTagger-Core', 'main', 'README.md', 'md2');
       md2(hash);
       break;
-    case '#spamTagger-bootc':
+    case '#spamtagger-bootc':
       loadMd('github.com', 'SpamTagger', 'SpamTagger-Bootc', 'main', 'README.md', 'md2');
       md2(hash);
       break;
