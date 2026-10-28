@@ -19,6 +19,20 @@
   margin-left: 10px;
 }
 
+.markdown-ul-checkbox, .markdown-ul-checkbox-checked {
+  list-style: none;
+}
+
+.markdown-ul-checkbox::before {
+  content: "☐";
+  margin-left: -1.4em;
+}
+
+.markdown-ul-checkbox-checked::before {
+  content: "☑";
+  margin-left: -1.4em;
+}
+
 .md ol {
   margin-left: 20px;
 }

@@ -318,7 +318,15 @@ export function loadMd(hostname, org, repo, branch, path, destination) {
           lists(a, state, 0);
           a = a.replace(/^\s*[\-\+\*] /, '');
           state.danglingList = 1;
-          html += '<li class="markdown-ul-li">'+a;
+	  if (a.match(/^\[ \]/)) {
+            a = a.replace(/^\[ \]/, '');
+            html += '<li class="markdown-ul-checkbox">'+a;
+	  } else if (a.match(/^\[x\]/)) {
+            a = a.replace(/^\[x\]/, '');
+            html += '<li class="markdown-ul-checkbox-checked">'+a;
+	  } else {
+            html += '<li class="markdown-ul-li">'+a;
+	  }
           return;
         }
 
